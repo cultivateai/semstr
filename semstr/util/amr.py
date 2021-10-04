@@ -16,13 +16,7 @@ from ucca.textutil import Attr
 from word2number import w2n
 
 from ..constraints import Valid
-
-prev_dir = os.getcwd()
-try:
-    os.chdir(os.path.dirname(util.find_spec("src.amr").origin))  # to find amr.peg
-    from src import amr as amr_lib
-finally:
-    os.chdir(prev_dir)
+from ..amr import amr as amr_lib
 
 TERMINAL_DEP = layer1.EdgeTags.Terminal
 PUNCTUATION_DEP = layer1.EdgeTags.Punctuation
