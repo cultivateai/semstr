@@ -16,7 +16,7 @@ from ucca.textutil import Attr
 from word2number import w2n
 
 from ..constraints import Valid
-from ..amr import amr as amr_lib
+from ..amr.src import amr as amr_lib
 
 TERMINAL_DEP = layer1.EdgeTags.Terminal
 PUNCTUATION_DEP = layer1.EdgeTags.Punctuation

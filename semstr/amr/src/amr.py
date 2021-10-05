@@ -28,7 +28,11 @@ from parsimonious.grammar import Grammar
 def clean_grammar_file(s):
     return re.sub('\n[ \t]+', ' ', re.sub(r'#.*','',s.replace('\t',' ').replace('`','_backtick')))
 
-with open('amr.peg') as inF:
+import os
+file_path= os.path.dirname(__file__) #<-- absolute dir the script is in
+rel_path = "amr.peg"
+abs_file_path = os.path.join(file_path, rel_path)
+with open(abs_file_path) as inF:
     grammar = Grammar(clean_grammar_file(inF.read()))
 
 
